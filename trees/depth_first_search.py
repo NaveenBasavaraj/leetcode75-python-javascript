@@ -1,31 +1,27 @@
-from binary_search_tree import TreeNode
+from binary_tree import TreeNode
 
-class BinaryTree:
-    # left prioritizing
-    # left - root - right
+
+class DepthFirst:
     def inorder(self, root):
+        # left - root - right
         if not root:
             return
         self.inorder(root.left)
         print(root.val)
         self.inorder(root.right)
-    
+
     def preorder(self, root):
-        # left prioritizing
         # root - left - right
         if not root:
             return
         print(root.val)
         self.preorder(root.left)
         self.preorder(root.right)
-    
+
     def postorder(self, root):
-        # left prioritizing
-        # left - right - root
+        # left - right - parent
         if not root:
-            return 
-        self.postorder(root.left)
-        self.postorder(root.right)
+            return
+        self.preorder(root.left)
+        self.preorder(root.right)
         print(root.val)
-        
-        
