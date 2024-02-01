@@ -21,4 +21,4 @@ class Merge:
             node = node.next
         node.next = list1 or list2 
         
-        return dummy.next
+        return dummy.next 
